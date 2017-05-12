@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane prefHeight="442.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
    <top>
-      <Label text="Lab3_Segreteria Studenti" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="20.0" top="10.0" />
-         </BorderPane.margin></Label>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Lab3_Segreteria Studenti" textAlignment="CENTER" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lblCorso" text="Corso:">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin></Label>
+                  <ComboBox fx:id="comboCorso">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnCercaIscrittiCorso" mnemonicParsing="false" onAction="#doCercaIscrittiCorso" text="Cerca iscritti corso">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lblStudente" text="Studente:">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin></Label>
+                  <TextField fx:id="txtMatricola" prefHeight="25.0" prefWidth="86.0" promptText="Matricola">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin></TextField>
+                  <Button fx:id="btnCercaNome" mnemonicParsing="false" onAction="#doCercaNome" prefHeight="19.0" prefWidth="28.0">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../../Desktop/img.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="txtNome" prefHeight="25.0" prefWidth="114.0" promptText="Nome">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin></TextField>
+                  <TextField fx:id="txtCognome" promptText="Cognome">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin></TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnCercaCorsi" mnemonicParsing="false" onAction="#doCercaCorsi" text="Cerca corsi">
+                     <HBox.margin>
+                        <Insets left="13.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnIscrivi" mnemonicParsing="false" onAction="#doIscrivi" text="Iscrivi">
+                     <HBox.margin>
+                        <Insets left="410.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </top>
+   <bottom>
+      <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset" BorderPane.alignment="CENTER_RIGHT">
+         <BorderPane.margin>
+            <Insets right="15.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+   <center>
+      <TextArea fx:id="txtResult" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>
